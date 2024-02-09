@@ -1,13 +1,16 @@
 :root {
   --color-primary: #ffffff;
-  --color-secondary: #8b0096;
-  --color-text-primary: #ffffff;
+  --color-secondary: #d5bdaf;
+  --color-secondary-text-box-BG: #d5bdafc7;
+  --color-text-primary: #000000;
+  --color-text-secondary: #ffffff;
 }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
+  /* border: solid 1px salmon; */
 }
 
 html {
@@ -16,28 +19,121 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #444;
-  background-color: var(--color-primary);
+  font-family: "Times New Roman", Times, serif, sans-serif;
+  background: linear-gradient(
+    var(--color-primary) 14%,
+    var(--color-secondary) 45%
+  );
+  width: 100vw;
   height: 100vh;
   font-size: 1.6rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "header" "main" "footer";
+  padding: 0.7rem;
 }
 
 header {
+  grid-area: header;
+  margin: 0.7rem;
+  padding: 0.7rem;
 }
 
 .logo {
+  margin: 0 auto;
+  text-align: center;
+  width: 420px;
+  height: 125px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-container {
+  padding: 0.7rem;
+  width: 75%;
   margin: 0 auto;
 }
 
 nav ul {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   list-style: none;
   justify-content: space-between;
-  width: 100%;
   padding: 0 6rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-size: 2.4rem;
 }
 
 main {
+  margin: 0.7rem auto;
+  padding: 0 7rem;
+  grid-area: main;
+  overflow: scroll;
+  width: 95%;
+  height: 90%;
+
+  /* Scrollbar removal for IE */
+  -ms-overflow-style: none;
+
+  /* Scrollbar removal for Firefox */
+  scrollbar-width: none;
+}
+
+/* Scrollbar removal for Chrome */
+main::-webkit-scrollbar {
+  display: none;
+}
+
+.main-container section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.gallery-groups {
+  width: 100%;
+  height: 100%;
+}
+
+.group {
+  margin: 0.7rem 0rem;
+  position: relative;
+  display: flex;
+  width: 60rem;
+  height: 35rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.group-name-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: auto;
+  height: 3.5rem;
+  background-color: var(--color-secondary-text-box-BG);
+  color: var(--color-text-secondary);
+  font-size: 3rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  height: 1.2rem;
+  grid-area: footer;
+  position: fixed;
+  left: 0;
+  bottom: 3rem;
+  text-align: center;
+  width: 100%;
+  /* margin: 0; */
 }
