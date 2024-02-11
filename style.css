@@ -4,6 +4,9 @@
   --color-secondary-text-box-BG: #d5bdafc7;
   --color-text-primary: #000000;
   --color-text-secondary: #ffffff;
+  --color-primary-modal: #d5bdafcb;
+  --color-secondary-modal: #d5bdafa6;
+  --color-tertary-modal: #d6bdaf2a;
 }
 
 * {
@@ -21,8 +24,8 @@ html {
 body {
   font-family: "Times New Roman", Times, serif, sans-serif;
   background: linear-gradient(
-    var(--color-primary) 14%,
-    var(--color-secondary) 45%
+    var(--color-primary) 15%,
+    var(--color-secondary) 29%
   );
   width: 100vw;
   height: 100vh;
@@ -68,6 +71,17 @@ nav ul {
   font-size: 2.4rem;
 }
 
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 main {
   margin: 0.7rem auto;
   padding: 0 7rem;
@@ -89,11 +103,13 @@ main::-webkit-scrollbar {
 }
 
 .main-container section {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 .gallery-groups {
   width: 100%;
   height: 100%;
@@ -103,8 +119,8 @@ main::-webkit-scrollbar {
   margin: 0.7rem 0rem;
   position: relative;
   display: flex;
-  width: 60rem;
-  height: 35rem;
+  width: 55rem;
+  height: 29rem;
   justify-content: center;
   align-items: center;
 }
@@ -135,4 +151,21 @@ footer {
   text-align: center;
   width: 100%;
   /* margin: 0; */
+}
+
+#main-modal-container {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  left: 0;
+  top: 0;
+
+  background: linear-gradient(
+    var(--color-tertary-modal) 5%,
+    var(--color-secondary-modal) 25%,
+    var(--color-secondary-text-box-BG) 55%,
+    var(--color-primary-modal) 45%
+  );
 }
