@@ -28,7 +28,6 @@ body {
   height: 100vh;
   font-size: 1.6rem;
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-template-areas: "header" "main" "footer";
   padding: 0.7rem;
