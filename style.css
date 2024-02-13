@@ -4,8 +4,8 @@
   --color-secondary-text-box-BG: #d5bdafc7;
   --color-text-primary: #000000;
   --color-text-secondary: #ffffff;
-  --color-primary-modal: #d5bdafcb;
-  --color-secondary-modal: #d5bdafa6;
+  --color-primary-modal: #d5bdafef;
+  --color-secondary-modal: #d5bdafd7;
   --color-tertary-modal: #d6bdaf2a;
 }
 
@@ -83,6 +83,7 @@ a:hover {
 }
 
 main {
+  position: relative;
   margin: 0.7rem auto;
   padding: 0 7rem;
   grid-area: main;
@@ -102,7 +103,7 @@ main::-webkit-scrollbar {
   display: none;
 }
 
-.main-container section {
+section {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -167,6 +168,16 @@ footer {
     var(--color-secondary-text-box-BG) 55%,
     var(--color-primary-modal) 45%
   );
+}
+
+.modal {
+  background-color: var(--color-primary-modal);
+  width: 72%;
+  margin: 20rem auto;
+  padding: 2.1rem;
+}
+.for-me-info {
+  font-size: 2.5rem;
 }
 
 .hidden {

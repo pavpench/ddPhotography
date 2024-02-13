@@ -12,7 +12,9 @@ const info = document.querySelector(".info");
 //Event handling delegation
 navContainer.addEventListener("click", function (e) {
   const clicked = e.target.closest(".nav-btn");
+
   if (!clicked) return;
+
   if (clicked === info) {
     overlay.classList.remove("hidden");
   } else overlay.classList.add("hidden");
