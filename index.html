@@ -12,16 +12,24 @@
         <img src="Assets/logo.png" alt="DD Photography logo" />
       </div>
       <nav class="nav-container">
-        <ul>
-          <li class="nav-btn landing-page">Начало</li>
-          <li class="nav-btn gallery">Галерия</li>
-          <li class="nav-btn info">За Мен</li>
-          <li class="nav-btn contact">Контакт</li>
+        <ul class="list">
+          <li class="landing-page">
+            <button class="nav_btn nav_btn--active" data-tab="1">Начало</button>
+          </li>
+          <li class="gallery">
+            <button class="nav_btn" data-tab="2">Галерия</button>
+          </li>
+          <li class="info">
+            <button class="nav_btn" data-tab="">За Мен</button>
+          </li>
+          <li class="contact">
+            <button class="nav_btn" data-tab="3">Контакт</button>
+          </li>
         </ul>
       </nav>
     </header>
     <main class="main-container">
-      <section class="gallery-groups active">
+      <section class="landing nav_content nav_content--1 nav_content--active">
         <div class="group">
           <img src="./Assets/DSC_1277 1.png" alt="" />
           <div class="group-name-title">Новородени</div>
@@ -40,12 +48,12 @@
         </div>
       </section>
 
-      <section class="gallery">
+      <section class="gallery nav_content nav_content--2">
         <ul class="gallery-list"></ul>
       </section>
 
-      <section class="contact">
-        <ul class="contacts">
+      <section class="contact nav_content nav_content--3">
+        <ul class="contacts list">
           <li class="phone">+359879451918</li>
           <li class="facebook"><a href="">Desislava Drumeva</a></li>
           <li class="instagram"><a href="">desidrumeva</a></li>
