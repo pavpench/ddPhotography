@@ -12,16 +12,24 @@
         <img src="Assets/logo.png" alt="DD Photography logo" />
       </div>
       <nav class="nav-container">
-        <ul>
-          <li><a href="">Начало</a></li>
-          <li>Галерия</li>
-          <li id="info">За Мен</li>
-          <li>Контакти</li>
+        <ul class="list">
+          <li class="landing-page">
+            <button class="nav_btn nav_btn--active" data-tab="1">Начало</button>
+          </li>
+          <li class="gallery">
+            <button class="nav_btn" data-tab="2">Галерия</button>
+          </li>
+          <li class="">
+            <button class="nav_btn info" data-tab="3">За Мен</button>
+          </li>
+          <li class="contact">
+            <button class="nav_btn" data-tab="4">Контакт</button>
+          </li>
         </ul>
       </nav>
     </header>
     <main class="main-container">
-      <section class="gallery-groups">
+      <section class="landing nav_content nav_content--1 nav_content--active">
         <div class="group">
           <img src="./Assets/DSC_1277 1.png" alt="" />
           <div class="group-name-title">Новородени</div>
@@ -38,7 +46,32 @@
           <img src="./Assets/DSC_6405.png" alt="" />
           <div class="group-name-title">Специални поводи</div>
         </div>
-        <div id="main-modal-container"></div>
+      </section>
+
+      <section class="gallery nav_content nav_content--2">
+        <ul class="gallery-list"></ul>
+      </section>
+      <section class="overlay nav_content nav_content--3">
+        <div class="modal">
+          <h4 class="for-me-info">Добре дошли!</h4>
+          <p class="for-me-info">
+            Благодаря, за проявения интерес към работата ми! Тук може да
+            разгледате фотосесиите, запазили в себе си ценни и незабравими
+            моменти, както за моите клиенти, така и за мен. Разполагам с
+            фотостудио, с красиви и тематични декори. Също така, желаната от вас
+            фотосесия може да бъде заснета на избрано от вас любимо място. Ако
+            желаете да запишете час, свържете се с мен.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact nav_content nav_content--4">
+        <ul class="contacts list">
+          <li class="phone">+359879451918</li>
+          <li class="facebook"><a href="">Desislava Drumeva</a></li>
+          <li class="instagram"><a href="">desidrumeva</a></li>
+          <li class="email"><a href="">deskoko@abv.bg</a></li>
+        </ul>
       </section>
     </main>
     <footer>DD Photography &copy</footer>
