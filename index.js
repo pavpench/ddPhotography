@@ -13,20 +13,18 @@ navContainer.addEventListener("click", function (e) {
 
   if (!clicked) return;
 
-  if (clicked === info) {
-    overlay.classList.remove("hidden");
-  } else overlay.classList.add("hidden");
+  //Resetting active btn and active tab, making modal appear while other tabs are active
+  if (clicked !== info) {
+    nav_btns.forEach((navTab) => navTab.classList.remove("nav_btn--active"));
+    nav_content.forEach((content) => {
+      content.classList.remove("nav_content--active");
+    });
+  }
 
-  nav_btns.forEach((navTab) => navTab.classList.remove("nav_btn--active"));
-  nav_content.forEach((content) =>
-    content.classList.remove("nav_content--active")
-  );
-
-  clicked.classList.add("nav_btn--active");
-
+  //Activating content based on nav button clicked
   document
     .querySelector(`.nav_content--${clicked.dataset.tab}`)
     .classList.add("nav_content--active");
 
-  console.log(clicked);
+  clicked.classList.add("nav_btn--active");
 });

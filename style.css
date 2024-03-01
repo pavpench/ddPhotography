@@ -31,7 +31,7 @@ body {
   height: 100vh;
   font-size: 1.6rem;
   display: grid;
-  grid-template-rows: auto;
+  grid-template-rows: 25% 70% 5%;
   grid-template-areas: "header" "main" "footer";
   padding: 0.7rem;
 }
@@ -40,6 +40,7 @@ header {
   grid-area: header;
   margin: 0.7rem;
   padding: 0.7rem;
+  /* height: 18rem; */
 }
 
 .logo {
@@ -175,14 +176,19 @@ footer {
 
 .modal {
   background-color: var(--color-primary-modal);
-  width: 72%;
-  margin: 20rem auto;
-  padding: 2.1rem;
+  width: 75%;
+  height: 45%;
+  margin: 15rem auto;
+  padding: 2.5rem;
 }
 .for-me-info {
   font-size: 2.5rem;
 }
 
-.hidden {
+.nav_content {
   display: none;
+}
+
+.nav_content--active {
+  display: flex;
 }
