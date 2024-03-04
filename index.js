@@ -19,6 +19,15 @@ navContainer.addEventListener("click", function (e) {
     nav_content.forEach((content) => {
       content.classList.remove("nav_content--active");
     });
+    //Activating content based on nav button clicked
+    document
+      .querySelector(`.nav_content--${clicked.dataset.tab}`)
+      .classList.add("nav_content--active");
+
+    clicked.classList.add("nav_btn--active");
+  }
+  if (clicked === info) {
+    nav_btns.forEach((navTab) => navTab.classList.remove("nav_btn--active"));
   }
 
   //Activating content based on nav button clicked
