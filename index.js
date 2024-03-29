@@ -41,21 +41,48 @@ navContainer.addEventListener("click", function (e) {
 
 const gallery_grid_container = document.querySelector(".gallery-grid");
 const image_popup = document.getElementById("image_popup");
+const images = Array.from(document.querySelectorAll(".gallery-image"));
 const img_popup_overlay = document.querySelector(".overlay-popup-container");
+const closing_btn = document.querySelector(".close-button");
+const nextPicture = document.querySelector(".btnNext");
+const prevPicture = document.querySelector(".btnPrev");
+let currentImage;
+let startImage;
 
 function showImage(clickedImage) {
+  image_popup.style.display = "block";
   image_popup.src = clickedImage.src;
   img_popup_overlay.style.display = "block";
   document.body.style.overflow = "hidden";
+  startImage = images.indexOf(clickedImage);
 }
 
 function closeImage() {
-  imagePopup.style.display = "none";
+  img_popup_overlay.style.display = "none";
+  image_popup.style.display = "none";
   document.body.style.overflow = "auto";
 }
 
 gallery_grid_container.addEventListener("click", function (e) {
-  const clicked = e.target.closest(".gallery-image");
-  console.log(clicked);
+  let clicked = e.target.closest(".gallery-image");
   showImage(clicked);
 });
+
+closing_btn.addEventListener("click", closeImage);
+
+function nextImage() {
+  let nextImg = startImage + 1;
+
+  showImage(images[nextImg]);
+  console.log(nextImg);
+}
+function prevImage() {
+  let prevImage = startImage - 1;
+
+  showImage(images[prevImage]);
+}
+
+function galleryControl() {}
+
+nextPicture.addEventListener("click", nextImage);
+prevPicture.addEventListener("click", prevImage);
