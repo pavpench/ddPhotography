@@ -52,7 +52,7 @@ let startImage;
 function showImage(clickedImage) {
   image_popup.style.display = "block";
   image_popup.src = clickedImage.src;
-  img_popup_overlay.style.display = "block";
+  img_popup_overlay.style.display = "grid";
   document.body.style.overflow = "hidden";
   startImage = images.indexOf(clickedImage);
 }
@@ -74,7 +74,6 @@ function nextImage() {
   let nextImg = startImage + 1;
 
   showImage(images[nextImg]);
-  console.log(nextImg);
 }
 function prevImage() {
   let prevImage = startImage - 1;
