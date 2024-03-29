@@ -301,11 +301,11 @@ section {
   height: 100%;
 }
 .contacts.list {
-  margin-top: 15rem;
+  margin-top: 1rem;
 }
 
 .contact_item {
-  padding: 1rem;
+  padding: 3rem;
 }
 
 .contact_item img {
