@@ -11,6 +11,14 @@ navContainer.addEventListener("click", function (e) {
   const clicked = e.target.closest(".nav_btn");
 
   if (!clicked) return;
+  if (!gallery_sub_nav.classList.contains("active")) {
+    gallery_sub_nav.classList.add("active");
+  }
+
+  //Resetting active folder preview - WIP
+  document
+    .querySelectorAll(".gallery-grid")
+    .forEach((folder) => folder.classList.remove("gallery-folder-active"));
 
   //Resetting active btn and active tab, making modal appear while other tabs are active
   if (clicked !== info) {
@@ -37,9 +45,28 @@ navContainer.addEventListener("click", function (e) {
   clicked.classList.add("nav_btn--active");
 });
 
+//Gallery folders sub navigation
+const gallery_sub_nav = document.querySelector(".gallery_sub_nav_container");
+const folder_nav_btns = document.querySelectorAll(".folder-image");
+
+gallery_sub_nav.addEventListener("click", function (e) {
+  const clicked = e.target.closest(".folder-image");
+
+  //Resetting active folder preview - WIP
+  document
+    .querySelectorAll(".gallery-grid")
+    .forEach((folder) => folder.classList.remove("gallery-folder-active"));
+
+  gallery_sub_nav.classList.remove("active");
+
+  document
+    .querySelector(`.folder_content--${clicked.dataset.tab}`)
+    .classList.add("gallery-folder-active");
+});
+
 //Gallery interactivity
 
-const gallery_grid_container = document.querySelector(".gallery-grid");
+const gallery_grid_container = document.querySelectorAll(".gallery-grid");
 const image_popup = document.getElementById("image_popup");
 const images = Array.from(document.querySelectorAll(".gallery-image"));
 const img_popup_overlay = document.querySelector(".overlay-popup-container");
@@ -50,9 +77,9 @@ let currentImage;
 let startImage;
 
 function showImage(clickedImage) {
+  img_popup_overlay.style.display = "grid";
   image_popup.style.display = "block";
   image_popup.src = clickedImage.src;
-  img_popup_overlay.style.display = "grid";
   document.body.style.overflow = "hidden";
   startImage = images.indexOf(clickedImage);
 }
@@ -63,9 +90,11 @@ function closeImage() {
   document.body.style.overflow = "auto";
 }
 
-gallery_grid_container.addEventListener("click", function (e) {
-  let clicked = e.target.closest(".gallery-image");
-  showImage(clicked);
+gallery_grid_container.forEach((gallery) => {
+  gallery.addEventListener("click", function (e) {
+    let clicked = e.target.closest(".gallery-image");
+    showImage(clicked);
+  });
 });
 
 closing_btn.addEventListener("click", closeImage);
