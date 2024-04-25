@@ -36,31 +36,32 @@
     </header>
     <main class="main-container">
       <section class="landing nav_content nav_content--1 nav_content--active">
-        <div class="group">
+        <div class="group" data-tab="2" data-category="newborn">
           <img src="./Assets/DSC_1277 1.png" alt="" />
           <div class="group-name-title">Новородени</div>
         </div>
-        <div class="group">
+        <div class="group" data-tab="2" data-category="pregnant">
           <img src="./Assets/DSC_3126.png" alt="" />
           <div class="group-name-title">Бременни</div>
         </div>
-        <div class="group">
+        <div class="group" data-tab="2" data-category="baptism">
           <img src="./Assets/DSC_8645.png" alt="" />
           <div class="group-name-title">Кръщенета</div>
         </div>
-        <div class="group">
+        <div class="group" data-tab="2" data-category="occasions">
           <img src="./Assets/DSC_6405.png" alt="" />
           <div class="group-name-title">Специални поводи</div>
         </div>
       </section>
 
       <section class="gallery nav_content nav_content--2">
-        <!-- *Folders for gallery navigation -->
-        <div class="gallery_sub_nav_container folders active">
+        <!-- *Folders for navigation(Gallery) -->
+        <div class="gallery_sub_nav_container folders">
           <div class="gallery_folder">
             <img
               class="folder-image"
               data-tab="1"
+              data-category="newborn"
               src="./Assets/DSC_1277 1.png"
               alt="" />
           </div>
@@ -68,6 +69,7 @@
             <img
               class="folder-image"
               data-tab="2"
+              data-category="baptism"
               src="./Assets/DSC_8645.png"
               alt="" />
           </div>
@@ -75,6 +77,7 @@
             <img
               class="folder-image"
               data-tab="3"
+              data-category="pregnant"
               src="./Assets/DSC_3126 1.png"
               alt="" />
           </div>
@@ -82,25 +85,26 @@
             <img
               class="folder-image"
               data-tab="4"
+              data-category="occasions"
               src="./Assets/DSC_6405.png"
               alt="" />
           </div>
         </div>
 
         <!-- ***************Folders content -->
-        <div class="gallery-grid folder_content--1">
+        <div class="gallery-grid folder_content--1 category--newborn">
           <img class="gallery-image" src="./Assets/DSC_1047 1.png" alt="" />
           <img class="gallery-image" src="./Assets/DSC_1047 1.png" alt="" />
           <img class="gallery-image" src="./Assets/DSC_1047 1.png" alt="" />
           <img class="gallery-image" src="./Assets/DSC_1047 1.png" alt="" />
         </div>
-        <div class="gallery-grid folder_content--2">
+        <div class="gallery-grid folder_content--2 category--baptism">
           <img class="gallery-image" src="./Assets/DSC_8645.png" alt="" />
           <img class="gallery-image" src="./Assets/DSC_8645.png" alt="" />
           <img class="gallery-image" src="./Assets/DSC_8645.png" alt="" />
           <img class="gallery-image" src="./Assets/DSC_8645.png" alt="" />
         </div>
-        <!-- *FOLDERS CONTENT******************* -->
+        <!-- * END --- FOLDERS CONTENT******************* -->
         <div class="overlay-popup-container">
           <span class="close-button">×</span>
           <img src="" alt="Popup Image" id="image_popup" />
