@@ -6,9 +6,45 @@ const nav_content = document.querySelectorAll(".nav_content");
 const overlay = document.querySelector(".overlay");
 const info = document.querySelector(".info");
 
-const resetActiveView = function () {};
+/**
+ * Toggles Nav Btn to appear as activated or not
+ */
 
-//Navigation bar interactivity (using Event handling delegation)
+const toggleBtnView = function (state = false) {
+  return state
+    ? nav_btns.forEach((navTab) => navTab.classList.add("nav_btn--active"))
+    : nav_btns.forEach((navTab) => navTab.classList.remove("nav_btn--active"));
+};
+
+/**
+ * Content view
+ * Hiding the rest of the content which is not chosen
+ */
+
+const deactivateContentView = function () {
+  nav_btns.forEach((navTab) => navTab.classList.remove("nav_btn--active"));
+  nav_content.forEach((content) => {
+    content.classList.remove("nav_content--active");
+  });
+};
+
+/**
+ * Content view
+ * Showing the chosen content based on the Clicked element from the navigation
+ * @param {*} content
+ */
+
+const activateContentView = function (content) {
+  document
+    .querySelector(`.nav_content--${content.dataset.tab}`)
+    .classList.add("nav_content--active");
+
+  content.classList.add("nav_btn--active");
+};
+
+/**
+ * Navigation bar interactivity (using Event handling delegation)
+ */
 navContainer.addEventListener("click", function (e) {
   const clicked = e.target.closest(".nav_btn");
 
@@ -22,36 +58,34 @@ navContainer.addEventListener("click", function (e) {
     .querySelectorAll(".gallery-grid")
     .forEach((folder) => folder.classList.remove("gallery-folder-active"));
 
-  //Resetting active btn and active tab, making modal appear while other tabs are active
   if (clicked !== info) {
-    nav_btns.forEach((navTab) => navTab.classList.remove("nav_btn--active"));
-    nav_content.forEach((content) => {
-      content.classList.remove("nav_content--active");
-    });
+    //Resetting active btn and active tab,
+    deactivateContentView();
 
     //Activating content based on nav button clicked
-    document
-      .querySelector(`.nav_content--${clicked.dataset.tab}`)
-      .classList.add("nav_content--active");
-
-    clicked.classList.add("nav_btn--active");
+    activateContentView(clicked);
   }
 
+  // making only modal appear while other tabs are active
   if (clicked === info) {
     nav_btns.forEach((navTab) => navTab.classList.remove("nav_btn--active"));
+    activateContentView(clicked);
   }
 
   //Activating content - Navigation (based on nav button clicked)
-  document
-    .querySelector(`.nav_content--${clicked.dataset.tab}`)
-    .classList.add("nav_content--active");
+  // document
+  //   .querySelector(`.nav_content--${clicked.dataset.tab}`)
+  //   .classList.add("nav_content--active");
 
-  clicked.classList.add("nav_btn--active");
+  // clicked.classList.add("nav_btn--active");
 });
 
-//Gallery folders sub navigation
 const gallery_sub_nav = document.querySelector(".gallery_sub_nav_container");
 const folder_nav_btns = document.querySelectorAll(".folder-image");
+
+/**
+ * Gallery folders sub navigation
+ */
 
 gallery_sub_nav.addEventListener("click", function (e) {
   const clicked = e.target.closest(".folder-image");
@@ -70,9 +104,12 @@ gallery_sub_nav.addEventListener("click", function (e) {
     .classList.add("gallery-folder-active");
 });
 
-//Landing page navigation(to gallery -> category)
 const landing_category_nav = document.querySelector(".landing");
 const categories = document.querySelectorAll(".group");
+
+/**
+ * Landing page navigation(to gallery -> category)
+ */
 
 landing_category_nav.addEventListener("click", function (e) {
   const clicked = e.target.closest(".group");
@@ -84,26 +121,24 @@ landing_category_nav.addEventListener("click", function (e) {
 
   gallery_sub_nav.classList.remove("active");
 
-  //Resetting active btn and active tab, making modal appear while other tabs are active
-  if (clicked !== info) {
-    nav_btns.forEach((navTab) => navTab.classList.remove("nav_btn--active"));
-    nav_content.forEach((content) => {
-      content.classList.remove("nav_content--active");
-    });
+  // if (clicked !== info) {
+  //Resetting active btn and active tab
+  deactivateContentView();
 
-    //Activating content based on nav button clicked
-    document
-      .querySelector(`.nav_content--${clicked.dataset.tab}`)
-      .classList.add("nav_content--active");
+  //Activating content based on nav button clicked
+  document
+    .querySelector(`.nav_content--${clicked.dataset.tab}`)
+    .classList.add("nav_content--active");
 
-    clicked.classList.add("nav_btn--active");
-  }
+  clicked.classList.add("nav_btn--active");
+  // }
 
   //Activating content - Navigation (based on nav button clicked)
   document
     .querySelector(`.nav_content--${clicked.dataset.tab}`)
     .classList.add("nav_content--active");
 
+  //Activating content - Based on category
   document
     .querySelector(`.category--${clicked.dataset.category}`)
     .classList.add("gallery-folder-active");
@@ -111,7 +146,6 @@ landing_category_nav.addEventListener("click", function (e) {
   console.log(clicked.dataset.tab);
 });
 
-//Gallery interactivity
 const gallery_grid_container = document.querySelectorAll(".gallery-grid");
 const image_popup = document.getElementById("image_popup");
 const images = Array.from(document.querySelectorAll(".gallery-image"));
@@ -121,6 +155,10 @@ const nextPicture = document.querySelector(".btnNext");
 const prevPicture = document.querySelector(".btnPrev");
 let currentImage;
 let startImage;
+
+/**
+ * Gallery interactivity
+ */
 
 function showImage(clickedImage) {
   img_popup_overlay.style.display = "grid";
