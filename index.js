@@ -8,29 +8,32 @@ const info = document.querySelector(".info");
 
 /**
  * Toggles Nav Btn to appear as activated or not
+ * @param {boolean} state
+ * @param {*} content - html element
+ * @returns state
  */
 
-const toggleBtnView = function (state = false) {
+const toggleBtnView = function (state = false, content) {
   return state
-    ? nav_btns.forEach((navTab) => navTab.classList.add("nav_btn--active"))
+    ? content.classList.add("nav_btn--active")
     : nav_btns.forEach((navTab) => navTab.classList.remove("nav_btn--active"));
 };
 
 /**
- * Content view
+ * Content view -
  * Hiding the rest of the content which is not chosen
  */
 
 const deactivateContentView = function () {
-  nav_btns.forEach((navTab) => navTab.classList.remove("nav_btn--active"));
+  toggleBtnView();
   nav_content.forEach((content) => {
     content.classList.remove("nav_content--active");
   });
 };
 
 /**
- * Content view
- * Showing the chosen content based on the Clicked element from the navigation
+ * Content view -
+ * Activating the chosen content based on the Clicked element from the navigation
  * @param {*} content
  */
 
@@ -39,7 +42,8 @@ const activateContentView = function (content) {
     .querySelector(`.nav_content--${content.dataset.tab}`)
     .classList.add("nav_content--active");
 
-  content.classList.add("nav_btn--active");
+  // content.classList.add("nav_btn--active");
+  toggleBtnView(true, content);
 };
 
 /**
@@ -59,25 +63,15 @@ navContainer.addEventListener("click", function (e) {
     .forEach((folder) => folder.classList.remove("gallery-folder-active"));
 
   if (clicked !== info) {
-    //Resetting active btn and active tab,
     deactivateContentView();
-
-    //Activating content based on nav button clicked
     activateContentView(clicked);
   }
 
-  // making only modal appear while other tabs are active
+  // making only modal appear while keeping last chosen tab active as background
   if (clicked === info) {
-    nav_btns.forEach((navTab) => navTab.classList.remove("nav_btn--active"));
+    toggleBtnView();
     activateContentView(clicked);
   }
-
-  //Activating content - Navigation (based on nav button clicked)
-  // document
-  //   .querySelector(`.nav_content--${clicked.dataset.tab}`)
-  //   .classList.add("nav_content--active");
-
-  // clicked.classList.add("nav_btn--active");
 });
 
 const gallery_sub_nav = document.querySelector(".gallery_sub_nav_container");
