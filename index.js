@@ -8,13 +8,13 @@ const info = document.querySelector(".info");
 
 /**
  * Toggles Nav Btn to appear as activated or not
- * @param {boolean} state
+ * @param {boolean} state - activate or deactivate the button based on passed state
  * @param {*} content - html element
- * @returns state
  */
 
 const toggleBtnView = function (state = false, content) {
-  return state
+  console.log(nav_btns);
+  state
     ? content.classList.add("nav_btn--active")
     : nav_btns.forEach((navTab) => navTab.classList.remove("nav_btn--active"));
 };
@@ -38,12 +38,21 @@ const deactivateContentView = function () {
  */
 
 const activateContentView = function (content) {
+  console.log(content);
   document
     .querySelector(`.nav_content--${content.dataset.tab}`)
     .classList.add("nav_content--active");
 
-  // content.classList.add("nav_btn--active");
   toggleBtnView(true, content);
+};
+
+/**
+ * Clear the opened gallery folder so other content could be presented
+ */
+const resetActiveFolderPreview = function () {
+  document
+    .querySelectorAll(".gallery-grid")
+    .forEach((folder) => folder.classList.remove("gallery-folder--active"));
 };
 
 /**
@@ -57,10 +66,8 @@ navContainer.addEventListener("click", function (e) {
     gallery_sub_nav.classList.add("active");
   }
 
-  //Resetting active folder preview - WIP
-  document
-    .querySelectorAll(".gallery-grid")
-    .forEach((folder) => folder.classList.remove("gallery-folder-active"));
+  //Resetting active folder preview
+  resetActiveFolderPreview();
 
   if (clicked !== info) {
     deactivateContentView();
@@ -85,9 +92,7 @@ gallery_sub_nav.addEventListener("click", function (e) {
   const clicked = e.target.closest(".folder-image");
 
   //Resetting active folder preview - WIP
-  document
-    .querySelectorAll(".gallery-grid")
-    .forEach((folder) => folder.classList.remove("gallery-folder-active"));
+  resetActiveFolderPreview();
 
   gallery_sub_nav.classList.remove("active");
   // End of Resetting
@@ -95,49 +100,45 @@ gallery_sub_nav.addEventListener("click", function (e) {
   //Activating content - Folder
   document
     .querySelector(`.folder_content--${clicked.dataset.tab}`)
-    .classList.add("gallery-folder-active");
+    .classList.add("gallery-folder--active");
 });
 
-const landing_category_nav = document.querySelector(".landing");
+const landingCategoryNav = document.querySelector(".landing");
 const categories = document.querySelectorAll(".group");
 
 /**
  * Landing page navigation(to gallery -> category)
  */
 
-landing_category_nav.addEventListener("click", function (e) {
+landingCategoryNav.addEventListener("click", function (e) {
   const clicked = e.target.closest(".group");
 
-  //Resetting active folder preview - WIP
-  document
-    .querySelectorAll(".gallery-grid")
-    .forEach((folder) => folder.classList.remove("gallery-folder-active"));
-
+  //Resetting active folder preview
+  resetActiveFolderPreview();
   gallery_sub_nav.classList.remove("active");
 
   // if (clicked !== info) {
   //Resetting active btn and active tab
   deactivateContentView();
+  toggleBtnView(null, clicked);
 
   //Activating content based on nav button clicked
-  document
-    .querySelector(`.nav_content--${clicked.dataset.tab}`)
-    .classList.add("nav_content--active");
+  // document
+  //   .querySelector(`.nav_content--${clicked.dataset.tab}`)
+  //   .classList.add("nav_content--active");
 
-  clicked.classList.add("nav_btn--active");
   // }
 
   //Activating content - Navigation (based on nav button clicked)
-  document
-    .querySelector(`.nav_content--${clicked.dataset.tab}`)
-    .classList.add("nav_content--active");
+  // document
+  //   .querySelector(`.nav_content--${clicked.dataset.tab}`)
+  //   .classList.add("nav_content--active");
+  activateContentView(clicked);
 
   //Activating content - Based on category
   document
     .querySelector(`.category--${clicked.dataset.category}`)
-    .classList.add("gallery-folder-active");
-
-  console.log(clicked.dataset.tab);
+    .classList.add("gallery-folder--active");
 });
 
 const gallery_grid_container = document.querySelectorAll(".gallery-grid");
@@ -161,6 +162,10 @@ function showImage(clickedImage) {
   document.body.style.overflow = "hidden";
   startImage = images.indexOf(clickedImage);
 }
+
+/**
+ * Gallery interactivity
+ */
 
 function closeImage() {
   img_popup_overlay.style.display = "none";
