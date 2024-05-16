@@ -176,16 +176,39 @@ section {
   height: 100%;
 }
 
+/* Setting layout for gallery navigation folders */
+.gallery_sub_nav_container {
+  width: 100%;
+  margin: 0 auto;
+  display: none;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 1.7rem;
+  justify-content: center;
+  align-items: center;
+}
+.active {
+  /* earlier version set on grid; testing with flex */
+  display: grid;
+}
+.folder-image {
+  width: 30rem;
+  height: 17rem;
+}
+
 /* Setting gallery layout */
 .gallery-grid {
   width: 90%;
   margin: 0 auto;
-  display: grid;
+  display: none;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 1.7rem;
   justify-content: center;
   align-items: center;
 }
+.gallery-category--active {
+  display: grid;
+}
+
 .gallery-image {
   width: 20rem;
 }
