@@ -42,7 +42,6 @@ const deactivateContentView = function () {
  * @param {*} category - html element
  */
 const openCategory = function (category) {
-  console.log(category);
   document
     .querySelector(`.category--${category.dataset.category}`)
     .classList.add("gallery-category--active");
@@ -61,11 +60,23 @@ const resetActiveCategory = function () {
 /**
  * Gallery folders overview -
  * @param {boolean} state - toggles gallery folders navigation to be presented or not based on value provided
+ * ((((Deprecated))))
  */
 const toggleFoldersOverview = function (state) {
   state
     ? gallery_sub_nav.classList.add("active")
     : gallery_sub_nav.classList.remove("active");
+};
+
+const mainGalleryCategory = document.querySelector(".category--main");
+/**
+ * Gallery Main overview -
+ */
+const toggleMainGallery = function (state) {
+  console.log(mainGalleryCategory.classList);
+  state
+    ? mainGalleryCategory.classList.add("active")
+    : mainGalleryCategory.classList.remove("active");
 };
 
 /**
@@ -76,12 +87,10 @@ navContainer.addEventListener("click", function (e) {
   const clicked = e.target.closest(".nav_btn");
 
   if (!clicked) return;
-  if (!gallery_sub_nav.classList.contains("active")) {
-    toggleFoldersOverview(true);
-  }
 
   //Resetting active category preview
   resetActiveCategory();
+  toggleMainGallery(true);
 
   // general use case for navigation bar
   if (clicked !== info) {
@@ -108,16 +117,12 @@ const folder_nav_btns = document.querySelectorAll(".folder-image");
 
 gallery_sub_nav.addEventListener("click", function (e) {
   //Event delegation
-  const clicked = e.target.closest(".folder-image");
+  const clicked = e.target.closest(".gallery-category");
 
   //Resetting active folder preview
   resetActiveCategory();
-  toggleFoldersOverview();
-
-  //Activating content - Folder - WIP
-  // document
-  //   .querySelector(`.folder_content--${clicked.dataset.folder}`)
-  //   .classList.add("gallery-folder--active");
+  toggleMainGallery();
+  // toggleFoldersOverview();
 
   //Activating content based on category
   openCategory(clicked);
@@ -135,9 +140,9 @@ landingCategoryNav.addEventListener("click", function (e) {
 
   //Resetting active folder preview
   resetActiveCategory();
-  toggleFoldersOverview();
+  toggleMainGallery();
+  // toggleFoldersOverview();
 
-  // if (clicked !== info) {
   //Resetting active btn and active tab
   deactivateContentView();
   toggleBtnView(null, clicked);
