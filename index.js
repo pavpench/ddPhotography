@@ -57,20 +57,11 @@ const resetActiveCategory = function () {
     .forEach((folder) => folder.classList.remove("gallery-category--active"));
 };
 
-/**
- * Gallery folders overview -
- * @param {boolean} state - toggles gallery folders navigation to be presented or not based on value provided
- * ((((Deprecated))))
- */
-const toggleFoldersOverview = function (state) {
-  state
-    ? gallery_sub_nav.classList.add("active")
-    : gallery_sub_nav.classList.remove("active");
-};
-
 const mainGalleryCategory = document.querySelector(".category--main");
+
 /**
- * Gallery Main overview -
+ * Presenting the main gallery without category
+ * @param {boolean} state -
  */
 const toggleMainGallery = function (state) {
   console.log(mainGalleryCategory.classList);
@@ -122,7 +113,6 @@ gallery_sub_nav.addEventListener("click", function (e) {
   //Resetting active folder preview
   resetActiveCategory();
   toggleMainGallery();
-  // toggleFoldersOverview();
 
   //Activating content based on category
   openCategory(clicked);
@@ -206,8 +196,6 @@ function prevImage() {
 
   showImage(images[prevImage]);
 }
-
-function galleryControl() {}
 
 nextPicture.addEventListener("click", nextImage);
 prevPicture.addEventListener("click", prevImage);

@@ -33,7 +33,7 @@ body {
   height: 100vh;
   font-size: 1.6rem;
   display: grid;
-  grid-template-rows: 30% 65% 5%;
+  grid-template-rows: 25% 70% 5%;
   grid-template-areas: "header" "main" "footer";
   padding: 0.7rem;
 }
@@ -113,7 +113,7 @@ a:hover {
 /* General layout of main container */
 main {
   position: relative;
-  margin: 0.7rem auto;
+  margin: 1.5rem auto;
   padding: 0 7rem;
   grid-area: main;
   overflow: scroll;
@@ -180,7 +180,7 @@ section {
 .gallery_sub_nav_container {
   width: 100%;
   margin: 0 auto;
-  display: grid;
+  /* display: grid; */
   /* grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); */
   /* grid-gap: 1.7rem; */
   justify-content: center;
@@ -188,6 +188,7 @@ section {
 }
 
 .gallery_category_container {
+  margin: 0 auto 3rem auto;
   width: 60%;
   list-style: none;
   display: flex;
@@ -200,7 +201,7 @@ section {
 
 .active {
   /* earlier version set on grid; testing with flex */
-  display: flex;
+  display: grid;
 }
 
 .folder-image {
