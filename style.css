@@ -33,7 +33,7 @@ body {
   height: 100vh;
   font-size: 1.6rem;
   display: grid;
-  grid-template-rows: 30% 65% 5%;
+  grid-template-rows: 25% 70% 5%;
   grid-template-areas: "header" "main" "footer";
   padding: 0.7rem;
 }
@@ -74,23 +74,38 @@ nav ul {
   font-size: 2rem;
 }
 
-.nav_btn {
-  text-transform: uppercase;
+.btn {
   border: none;
-  font-size: 2rem;
-  letter-spacing: 0.2rem;
-  font-family: inherit;
   color: inherit;
   background-color: inherit;
+  font-family: inherit;
 }
 
-.nav_btn--active {
+.nav_btn {
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+}
+
+.btn:after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px #4b2a4ab0;
+  transform: scaleY(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.btn:hover:after {
+  transform: scaleY(1);
+}
+
+.btn--active {
   border: solid;
   border-image-slice: 1;
   border-width: 2.5px;
   border-image-source: linear-gradient(
     114deg,
-    rgba(75, 42, 74, 1) 50%,
+    rgb(75, 42, 74) 50%,
     rgba(255, 255, 255, 1) 70%,
     rgba(75, 42, 74, 1) 80%
   );
@@ -113,7 +128,7 @@ a:hover {
 /* General layout of main container */
 main {
   position: relative;
-  margin: 0.7rem auto;
+  margin: 1.5rem auto;
   padding: 0 7rem;
   grid-area: main;
   overflow: scroll;
@@ -176,20 +191,34 @@ section {
   height: 100%;
 }
 
-/* Setting layout for gallery navigation folders */
+/* Setting layout for gallery navigation by category */
 .gallery_sub_nav_container {
   width: 100%;
   margin: 0 auto;
-  display: none;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  grid-gap: 1.7rem;
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); */
+  /* grid-gap: 1.7rem; */
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
+
+.gallery_category_container {
+  margin: 0 auto 3rem auto;
+  width: 60%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.category--main {
+  display: none;
+}
+
 .active {
   /* earlier version set on grid; testing with flex */
   display: grid;
 }
+
 .folder-image {
   width: 30rem;
   height: 17rem;
@@ -199,12 +228,17 @@ section {
 .gallery-grid {
   width: 90%;
   margin: 0 auto;
-  display: none;
+  /* display: none; */
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 1.7rem;
   justify-content: center;
   align-items: center;
 }
+
+.folder_content {
+  display: none;
+}
+
 .gallery-category--active {
   display: grid;
 }
@@ -245,9 +279,6 @@ section {
 .gallery-nav {
   grid-area: control;
   justify-self: center;
-  /* position: absolute; */
-  /* bottom: 20rem;
-  left: 50%; */
 }
 
 .gallery_btn {
@@ -318,7 +349,7 @@ section {
   display: flex;
 }
 
-.contact {
+.contacts {
   font-size: 2.5rem;
   text-align: center;
   height: 100%;

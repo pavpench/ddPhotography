@@ -13,8 +13,8 @@ const info = document.querySelector(".nav_info_btn");
  */
 const toggleBtnView = function (state = false, content) {
   state
-    ? content.classList.add("nav_btn--active")
-    : nav_btns.forEach((navTab) => navTab.classList.remove("nav_btn--active"));
+    ? content.classList.add("btn--active")
+    : nav_btns.forEach((navTab) => navTab.classList.remove("btn--active"));
 };
 
 /**
@@ -42,7 +42,6 @@ const deactivateContentView = function () {
  * @param {*} category - html element
  */
 const openCategory = function (category) {
-  console.log(category);
   document
     .querySelector(`.category--${category.dataset.category}`)
     .classList.add("gallery-category--active");
@@ -58,14 +57,16 @@ const resetActiveCategory = function () {
     .forEach((folder) => folder.classList.remove("gallery-category--active"));
 };
 
+const mainGalleryCategory = document.querySelector(".category--main");
+
 /**
- * Gallery folders overview -
- * @param {boolean} state - toggles gallery folders navigation to be presented or not based on value provided
+ * Presenting the main gallery without category
+ * @param {boolean} state -
  */
-const toggleFoldersOverview = function (state) {
+const toggleMainGallery = function (state) {
   state
-    ? gallery_sub_nav.classList.add("active")
-    : gallery_sub_nav.classList.remove("active");
+    ? mainGalleryCategory.classList.add("active")
+    : mainGalleryCategory.classList.remove("active");
 };
 
 /**
@@ -76,12 +77,10 @@ navContainer.addEventListener("click", function (e) {
   const clicked = e.target.closest(".nav_btn");
 
   if (!clicked) return;
-  if (!gallery_sub_nav.classList.contains("active")) {
-    toggleFoldersOverview(true);
-  }
 
   //Resetting active category preview
   resetActiveCategory();
+  toggleMainGallery(true);
 
   // general use case for navigation bar
   if (clicked !== info) {
@@ -108,16 +107,11 @@ const folder_nav_btns = document.querySelectorAll(".folder-image");
 
 gallery_sub_nav.addEventListener("click", function (e) {
   //Event delegation
-  const clicked = e.target.closest(".folder-image");
+  const clicked = e.target.closest(".gallery-category");
 
   //Resetting active folder preview
   resetActiveCategory();
-  toggleFoldersOverview();
-
-  //Activating content - Folder - WIP
-  // document
-  //   .querySelector(`.folder_content--${clicked.dataset.folder}`)
-  //   .classList.add("gallery-folder--active");
+  toggleMainGallery();
 
   //Activating content based on category
   openCategory(clicked);
@@ -135,9 +129,9 @@ landingCategoryNav.addEventListener("click", function (e) {
 
   //Resetting active folder preview
   resetActiveCategory();
-  toggleFoldersOverview();
+  toggleMainGallery();
+  // toggleFoldersOverview();
 
-  // if (clicked !== info) {
   //Resetting active btn and active tab
   deactivateContentView();
   toggleBtnView(null, clicked);
@@ -201,8 +195,6 @@ function prevImage() {
 
   showImage(images[prevImage]);
 }
-
-function galleryControl() {}
 
 nextPicture.addEventListener("click", nextImage);
 prevPicture.addEventListener("click", prevImage);
