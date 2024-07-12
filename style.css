@@ -185,6 +185,15 @@ section {
   font-size: 3rem;
 }
 
+.group:hover {
+  cursor: pointer;
+}
+
+.group:hover .group-name-title {
+  transition: font-size 0.4s;
+  font-size: 3.5rem;
+}
+
 .logo-image,
 .landing img {
   width: 100%;
