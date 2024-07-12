@@ -31,17 +31,16 @@ body {
   color: var(--color-text-primary);
   width: 100vw;
   height: 100vh;
-  font-size: 1.6rem;
+  /* font-size: 1.6rem; */
   display: grid;
   grid-template-rows: 25% 70% 5%;
   grid-template-areas: "header" "main" "footer";
-  padding: 0.7rem;
+  gap: 2rem;
 }
 
 header {
   grid-area: header;
   margin: 0.7rem;
-  padding: 0.7rem;
 }
 
 .logo {
@@ -71,7 +70,6 @@ nav ul {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 6rem;
-  font-size: 2rem;
 }
 
 .btn {
@@ -79,12 +77,13 @@ nav ul {
   color: inherit;
   background-color: inherit;
   font-family: inherit;
+  font-size: 1.8rem;
 }
 
 .nav_btn {
   text-transform: uppercase;
-  font-size: 2rem;
-  letter-spacing: 0.2rem;
+  font-size: 2.4rem;
+  letter-spacing: 0.4rem;
 }
 
 .btn:after {
@@ -128,12 +127,11 @@ a:hover {
 /* General layout of main container */
 main {
   position: relative;
-  margin: 1.5rem auto;
-  padding: 0 7rem;
+  margin: 0 auto;
   grid-area: main;
   overflow: scroll;
   width: 95%;
-  height: 90%;
+  height: 100%;
 
   /* Scrollbar removal for IE */
   -ms-overflow-style: none;
@@ -204,11 +202,7 @@ section {
 .gallery_sub_nav_container {
   width: 100%;
   margin: 0 auto;
-  /* display: grid; */
-  /* grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); */
-  /* grid-gap: 1.7rem; */
   justify-content: center;
-  /* align-items: center; */
 }
 
 .gallery_category_container {
@@ -235,13 +229,12 @@ section {
 
 /* Setting gallery layout */
 .gallery-grid {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   /* display: none; */
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 1.7rem;
-  justify-content: center;
-  align-items: center;
+  place-items: center;
 }
 
 .folder_content {
@@ -256,7 +249,8 @@ section {
   width: 20rem;
 }
 .gallery-image:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
+  transition: 0.6s;
 }
 
 /* Background for gallery popup image */
@@ -347,7 +341,8 @@ section {
   padding: 2.5rem;
 }
 .for-me-info {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
+  letter-spacing: 0.1rem;
 }
 
 .nav_content {
@@ -379,11 +374,13 @@ section {
 }
 
 footer {
-  height: 1.2rem;
+  height: 1.8rem;
+  margin: 0.8rem;
   grid-area: footer;
   position: fixed;
   left: 0;
-  bottom: 3rem;
+  bottom: 0rem;
   text-align: center;
   width: 100%;
+  font-size: 1.2rem;
 }
