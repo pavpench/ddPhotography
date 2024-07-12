@@ -13,8 +13,8 @@ const info = document.querySelector(".nav_info_btn");
  */
 const toggleBtnView = function (state = false, content) {
   state
-    ? content.classList.add("nav_btn--active")
-    : nav_btns.forEach((navTab) => navTab.classList.remove("nav_btn--active"));
+    ? content.classList.add("btn--active")
+    : nav_btns.forEach((navTab) => navTab.classList.remove("btn--active"));
 };
 
 /**
@@ -64,7 +64,6 @@ const mainGalleryCategory = document.querySelector(".category--main");
  * @param {boolean} state -
  */
 const toggleMainGallery = function (state) {
-  console.log(mainGalleryCategory.classList);
   state
     ? mainGalleryCategory.classList.add("active")
     : mainGalleryCategory.classList.remove("active");

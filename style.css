@@ -74,23 +74,38 @@ nav ul {
   font-size: 2rem;
 }
 
-.nav_btn {
-  text-transform: uppercase;
+.btn {
   border: none;
-  font-size: 2rem;
-  letter-spacing: 0.2rem;
-  font-family: inherit;
   color: inherit;
   background-color: inherit;
+  font-family: inherit;
 }
 
-.nav_btn--active {
+.nav_btn {
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+}
+
+.btn:after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px #4b2a4ab0;
+  transform: scaleY(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.btn:hover:after {
+  transform: scaleY(1);
+}
+
+.btn--active {
   border: solid;
   border-image-slice: 1;
   border-width: 2.5px;
   border-image-source: linear-gradient(
     114deg,
-    rgba(75, 42, 74, 1) 50%,
+    rgb(75, 42, 74) 50%,
     rgba(255, 255, 255, 1) 70%,
     rgba(75, 42, 74, 1) 80%
   );
@@ -264,9 +279,6 @@ section {
 .gallery-nav {
   grid-area: control;
   justify-self: center;
-  /* position: absolute; */
-  /* bottom: 20rem;
-  left: 50%; */
 }
 
 .gallery_btn {
@@ -337,7 +349,7 @@ section {
   display: flex;
 }
 
-.contact {
+.contacts {
   font-size: 2.5rem;
   text-align: center;
   height: 100%;
