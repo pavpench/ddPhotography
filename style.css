@@ -91,7 +91,7 @@ nav ul {
   content: "";
   border-bottom: solid 3px #4b2a4ab0;
   transform: scaleY(0);
-  transition: transform 250ms ease-in-out;
+  transition: transform 150ms ease-in-out;
 }
 
 .btn:hover:after {
