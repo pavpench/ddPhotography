@@ -247,6 +247,7 @@ section {
 
 .gallery-image {
   width: 20rem;
+  height: 15rem;
 }
 .gallery-image:hover {
   transform: scale(1.1);
