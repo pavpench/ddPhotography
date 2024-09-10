@@ -1,0 +1,48 @@
+body {
+}
+
+#filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 12px;
+}
+
+.filter-element {
+  background-color: aqua;
+  padding: 12px 24px;
+  border-radius: 20px;
+  margin: 6px;
+  cursor: pointer;
+}
+
+.filter-element:hover {
+  background-color: antiquewhite;
+}
+
+.filter-active {
+  background-color: bisque;
+}
+
+/* masonry effect */
+#gallery-container {
+  width: 90%;
+  margin: 0 auto;
+  column-count: 3;
+  column-gap: 0.5rem;
+}
+
+.gallery-image {
+  width: 100%;
+}
+
+.gallery-image.hide-image {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  #gallery-container {
+    column-count: 2;
+  }
+}

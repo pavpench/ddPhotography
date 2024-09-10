@@ -118,7 +118,7 @@ gallery_sub_nav.addEventListener("click", function (e) {
 });
 
 const landingCategoryNav = document.querySelector(".landing");
-const categories = document.querySelectorAll(".group");
+// const categories = document.querySelectorAll(".group");
 
 /**
  * Landing page navigation(to gallery -> category)
@@ -146,7 +146,7 @@ landingCategoryNav.addEventListener("click", function (e) {
 
 const gallery_grid_container = document.querySelectorAll(".gallery-grid");
 const image_popup = document.getElementById("image_popup");
-const images = Array.from(document.querySelectorAll(".gallery-image"));
+// const images = Array.from(document.querySelectorAll(".gallery-image"));
 const img_popup_overlay = document.querySelector(".overlay-popup-container");
 const closing_btn = document.querySelector(".close-button");
 const nextPicture = document.querySelector(".btnNext");
@@ -163,7 +163,7 @@ function showImage(clickedImage) {
   image_popup.style.display = "block";
   image_popup.src = clickedImage.src;
   document.body.style.overflow = "hidden";
-  startImage = images.indexOf(clickedImage);
+  // startImage = images.indexOf(clickedImage);
 }
 
 /**
@@ -188,12 +188,12 @@ closing_btn.addEventListener("click", closeImage);
 function nextImage() {
   let nextImg = startImage + 1;
 
-  showImage(images[nextImg]);
+  // showImage(images[nextImg]);
 }
 function prevImage() {
   let prevImage = startImage - 1;
 
-  showImage(images[prevImage]);
+  // showImage(images[prevImage]);
 }
 
 nextPicture.addEventListener("click", nextImage);
