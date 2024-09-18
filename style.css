@@ -33,7 +33,7 @@ body {
   height: 100vh;
   /* font-size: 1.6rem; */
   display: grid;
-  grid-template-rows: 25% 70% 5%;
+  grid-template-rows: 25% 65% 5%;
   grid-template-areas: "header" "main" "footer";
   gap: 2rem;
 }
@@ -50,10 +50,10 @@ header {
   height: 160px;
 }
 
-.logo img {
+/* .logo img {
   width: 100%;
   height: 100%;
-}
+} */
 
 .nav-container {
   padding: 0.7rem;
@@ -148,7 +148,7 @@ main::-webkit-scrollbar {
 /* General styling for different content sections */
 section {
   position: relative;
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -201,37 +201,17 @@ section {
 /* Setting layout for gallery navigation by category */
 .gallery_sub_nav_container {
   width: 100%;
+  height: 65px;
   margin: 0 auto;
   justify-content: center;
-}
-
-.gallery_category_container {
-  margin: 0 auto 3rem auto;
-  width: 60%;
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-}
-
-.category--main {
-  display: none;
-}
-
-.active {
-  /* earlier version set on grid; testing with flex */
-  display: grid;
-}
-
-.folder-image {
-  width: 30rem;
-  height: 17rem;
+  position: sticky;
+  top: 0px;
 }
 
 /* Setting gallery layout */
 .gallery-grid {
   width: 100%;
   margin: 0 auto;
-  /* display: none; */
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 1.7rem;
   place-items: center;
@@ -247,7 +227,7 @@ section {
 
 .gallery-image {
   width: 20rem;
-  height: 15rem;
+  /* height: 15rem; */
 }
 .gallery-image:hover {
   transform: scale(1.1);

@@ -1,16 +1,13 @@
-body {
-}
-
 #filter-container {
+  background: var(--color-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 12px;
 }
 
 .filter-element {
-  background-color: aqua;
+  background-color: var(--color-secondary);
   padding: 12px 24px;
   border-radius: 20px;
   margin: 6px;
@@ -19,10 +16,12 @@ body {
 
 .filter-element:hover {
   background-color: antiquewhite;
+  color: var(--color-text-primary);
 }
 
 .filter-active {
-  background-color: bisque;
+  background-color: var(--color-text-primary);
+  color: antiquewhite;
 }
 
 /* masonry effect */
