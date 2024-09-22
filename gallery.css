@@ -1,5 +1,6 @@
 #filter-container {
   background: var(--color-secondary);
+
   display: flex;
   align-items: center;
   justify-content: center;

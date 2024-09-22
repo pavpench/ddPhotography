@@ -98,7 +98,7 @@ function showImage(clickedImage) {
   image_popup.style.display = "block";
   image_popup.src = clickedImage.src;
   document.body.style.overflow = "hidden";
-  startImage = images.indexOf(clickedImage);
+  startImage = clickedImage.id * 1;
 }
 
 /**
@@ -122,12 +122,10 @@ closing_btn.addEventListener("click", closeImage);
 
 function nextImage() {
   let nextImg = startImage + 1;
-
   showImage(images[nextImg]);
 }
 function prevImage() {
   let prevImage = startImage - 1;
-
   showImage(images[prevImage]);
 }
 
