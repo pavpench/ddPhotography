@@ -174,7 +174,7 @@ section {
   width: auto;
   height: 3.5rem;
   background-color: var(--color-secondary-text-box-BG);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   font-size: 3rem;
 }
 
