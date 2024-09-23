@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="#" />
     <title>DD Photography</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="gallery.css" />
     <script
       src="https://kit.fontawesome.com/3ff8ee0abd.js"
       crossorigin="anonymous"></script>
@@ -21,16 +22,10 @@
       <nav class="nav-container">
         <ul class="list">
           <li class="landing-page">
-            <button
-              class="btn nav_btn nav_landing_btn nav_btn--active"
-              data-tab="1">
-              Начало
-            </button>
+            <button class="btn nav_btn" data-tab="1">Начало</button>
           </li>
           <li class="gallery">
-            <button class="btn nav_btn nav_gallery_btn" data-tab="2">
-              Галерия
-            </button>
+            <button class="btn nav_btn" data-tab="2">Галерия</button>
           </li>
           <li class="">
             <button class="btn nav_btn nav_info_btn" data-tab="3">
@@ -38,327 +33,40 @@
             </button>
           </li>
           <li class="contact">
-            <button class="btn nav_btn nav_contact_btn" data-tab="4">
-              Контакт
-            </button>
+            <button class="btn nav_btn" data-tab="4">Контакт</button>
           </li>
         </ul>
       </nav>
     </header>
     <main class="main-container">
       <section class="landing nav_content nav_content--1 nav_content--active">
-        <div class="group" data-tab="2" data-category="newborn">
+        <div class="group filter-element" data-tab="2" data-category="newborn">
           <img src="./Assets/DSC_1277 1.png" alt="" />
           <div class="group-name-title">Новородени</div>
         </div>
-        <div class="group" data-tab="2" data-category="pregnant">
+        <div class="group filter-element" data-tab="2" data-category="pregnant">
           <img src="./Assets/DSC_3126.png" alt="" />
           <div class="group-name-title">Бременни</div>
         </div>
-        <div class="group" data-tab="2" data-category="baptism">
+        <div class="group filter-element" data-tab="2" data-category="baptism">
           <img src="./Assets/DSC_8645.png" alt="" />
           <div class="group-name-title">Кръщенета</div>
         </div>
-        <div class="group" data-tab="2" data-category="occasions">
+        <div
+          class="group filter-element"
+          data-tab="2"
+          data-category="occasions">
           <img src="./Assets/DSC_6405.png" alt="" />
           <div class="group-name-title">Специални поводи</div>
         </div>
       </section>
 
       <section class="gallery nav_content nav_content--2">
-        <!-- *Folders for navigation(Gallery) -->
         <div class="gallery_sub_nav_container">
-          <ul class="gallery_category_container">
-            <li class="gallery-category" data-category="main">
-              <button class="btn">Всички</button>
-            </li>
-            <li
-              class="gallery-category"
-              data-folder="1"
-              data-category="newborn">
-              <button class="btn">Новородени</button>
-            </li>
-            <li
-              class="gallery-category"
-              data-folder="2"
-              data-category="baptism">
-              <button class="btn">Кръщенета</button>
-            </li>
-            <li
-              class="gallery-category"
-              data-folder="3"
-              data-category="pregnant">
-              <button class="btn">Бременни</button>
-            </li>
-            <li
-              class="gallery-category"
-              data-folder="4"
-              data-category="occasions">
-              <button class="btn">Специални поводи</button>
-            </li>
-          </ul>
+          <ul id="filter-container"></ul>
         </div>
-        <div class="gallery-grid category--main">
-          <img src="./Assets/DSC_1047 1.png" alt="" class="gallery-image" />
-          <img src="./Assets/DSC_1277 1.png" alt="" class="gallery-image" />
-          <img src="./Assets/DSC_3126 1.png" alt="" class="gallery-image" />
-          <img src="./Assets/DSC_3238 1.png" alt="" class="gallery-image" />
-          <img src="./Assets/DSC_5044 1.png" alt="" class="gallery-image" />
-          <img src="./Assets/DSC_7036 1.png" alt="" class="gallery-image" />
-          <img src="./Assets/DSC_7779 1.png" alt="" class="gallery-image" />
-          <img src="./Assets/DSC_7919 1.png" alt="" class="gallery-image" />
-        </div>
+        <div class="gallery-grid" id="gallery-container"></div>
 
-        <!-- ***************Category content -->
-        <div class="gallery-grid folder_content category--newborn">
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_0008.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_0011.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_0021.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_0024.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_0240.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_0258.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_0266-2.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1705-2.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1743.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1748.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1769.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1785.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1790.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1792.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1796.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1799.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1807.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1886.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1892.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1937.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1941.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1951.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1991.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_1996.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2017.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2180.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2288.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2324-Edit.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2329.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2335.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2361.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2396.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2409.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2460.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2463.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2466.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2482.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2501.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2509.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2521.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2522.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2530.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2531.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2531-2.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2538.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2540.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_2548.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_4789.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_4829.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_9402.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_9412.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_9415.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_9477.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_9483.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_9546.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_9664.jpg"
-            alt="" />
-          <img
-            class="gallery-image"
-            src="./Assets/gallery/newborn-04.09.2028/DSC_9956.jpg"
-            alt="" />
-        </div>
-        <div class="gallery-grid folder_content category--baptism">
-          <img class="gallery-image" src="./Assets/DSC_8645.png" alt="" />
-          <img class="gallery-image" src="./Assets/DSC_8645.png" alt="" />
-          <img class="gallery-image" src="./Assets/DSC_8645.png" alt="" />
-          <img class="gallery-image" src="./Assets/DSC_8645.png" alt="" />
-        </div>
-        <div class="gallery-grid folder_content category--pregnant">
-          <img class="gallery-image" src="./Assets/DSC_1047 1.png" alt="" />
-          <img class="gallery-image" src="./Assets/DSC_1047 1.png" alt="" />
-          <img class="gallery-image" src="./Assets/DSC_1047 1.png" alt="" />
-          <img class="gallery-image" src="./Assets/DSC_1047 1.png" alt="" />
-        </div>
-        <div class="gallery-grid folder_content category--occasions">
-          <img class="gallery-image" src="./Assets/DSC_1047 1.png" alt="" />
-          <img class="gallery-image" src="./Assets/DSC_1047 1.png" alt="" />
-          <img class="gallery-image" src="./Assets/DSC_1047 1.png" alt="" />
-          <img class="gallery-image" src="./Assets/DSC_1047 1.png" alt="" />
-        </div>
-        <!-- * END --- CATEGORY CONTENT******************* -->
         <div class="overlay-popup-container">
           <span class="close-button">×</span>
           <img src="" alt="Popup Image" id="image_popup" />
@@ -429,4 +137,6 @@
     <footer>DD Photography &copy</footer>
   </body>
   <script src="index.js"></script>
+  <script src="data.js" defer></script>
+  <script src="gallery.js" defer></script>
 </html>

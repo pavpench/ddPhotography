@@ -1,0 +1,47 @@
+#filter-container {
+  background: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+span.filter-element {
+  background-color: var(--color-secondary);
+  padding: 12px 24px;
+  border-radius: 20px;
+  margin: 6px;
+  cursor: pointer;
+}
+
+span.filter-element:hover {
+  background-color: antiquewhite;
+  color: var(--color-text-primary);
+}
+
+span.filter-active {
+  background-color: var(--color-text-primary);
+  color: antiquewhite;
+}
+
+/* masonry effect */
+#gallery-container {
+  width: 90%;
+  margin: 0 auto;
+  column-count: 3;
+  column-gap: 0.5rem;
+}
+
+.gallery-image {
+  width: 100%;
+}
+
+.gallery-image.hide-image {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  #gallery-container {
+    column-count: 2;
+  }
+}

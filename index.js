@@ -38,38 +38,6 @@ const deactivateContentView = function () {
 };
 
 /**
- * Category view - activates the chosen category
- * @param {*} category - html element
- */
-const openCategory = function (category) {
-  document
-    .querySelector(`.category--${category.dataset.category}`)
-    .classList.add("gallery-category--active");
-};
-
-/**
- * Clear the opened gallery category so other content could be presented
- *
- */
-const resetActiveCategory = function () {
-  document
-    .querySelectorAll(".gallery-grid")
-    .forEach((folder) => folder.classList.remove("gallery-category--active"));
-};
-
-const mainGalleryCategory = document.querySelector(".category--main");
-
-/**
- * Presenting the main gallery without category
- * @param {boolean} state -
- */
-const toggleMainGallery = function (state) {
-  state
-    ? mainGalleryCategory.classList.add("active")
-    : mainGalleryCategory.classList.remove("active");
-};
-
-/**
  * Navigation bar interactivity (using Event handling delegation)
  */
 navContainer.addEventListener("click", function (e) {
@@ -77,10 +45,6 @@ navContainer.addEventListener("click", function (e) {
   const clicked = e.target.closest(".nav_btn");
 
   if (!clicked) return;
-
-  //Resetting active category preview
-  resetActiveCategory();
-  toggleMainGallery(true);
 
   // general use case for navigation bar
   if (clicked !== info) {
@@ -98,39 +62,14 @@ navContainer.addEventListener("click", function (e) {
   }
 });
 
-const gallery_sub_nav = document.querySelector(".gallery_sub_nav_container");
-const folder_nav_btns = document.querySelectorAll(".folder-image");
-
-/**
- * Gallery folders sub navigation - Ordering the folder based on category
- */
-
-gallery_sub_nav.addEventListener("click", function (e) {
-  //Event delegation
-  const clicked = e.target.closest(".gallery-category");
-
-  //Resetting active folder preview
-  resetActiveCategory();
-  toggleMainGallery();
-
-  //Activating content based on category
-  openCategory(clicked);
-});
-
 const landingCategoryNav = document.querySelector(".landing");
-const categories = document.querySelectorAll(".group");
 
 /**
- * Landing page navigation(to gallery -> category)
+ * Landing page navigation( gallery to category)
  */
 
 landingCategoryNav.addEventListener("click", function (e) {
   const clicked = e.target.closest(".group");
-
-  //Resetting active folder preview
-  resetActiveCategory();
-  toggleMainGallery();
-  // toggleFoldersOverview();
 
   //Resetting active btn and active tab
   deactivateContentView();
@@ -139,14 +78,10 @@ landingCategoryNav.addEventListener("click", function (e) {
   //Activating gallery content tab and btn UI
   activateContentView(clicked);
   toggleBtnView(true, nav_btns[1]);
-
-  //Activating gallery category
-  openCategory(clicked);
 });
 
 const gallery_grid_container = document.querySelectorAll(".gallery-grid");
 const image_popup = document.getElementById("image_popup");
-const images = Array.from(document.querySelectorAll(".gallery-image"));
 const img_popup_overlay = document.querySelector(".overlay-popup-container");
 const closing_btn = document.querySelector(".close-button");
 const nextPicture = document.querySelector(".btnNext");
@@ -163,7 +98,7 @@ function showImage(clickedImage) {
   image_popup.style.display = "block";
   image_popup.src = clickedImage.src;
   document.body.style.overflow = "hidden";
-  startImage = images.indexOf(clickedImage);
+  startImage = clickedImage.id * 1;
 }
 
 /**
@@ -187,12 +122,10 @@ closing_btn.addEventListener("click", closeImage);
 
 function nextImage() {
   let nextImg = startImage + 1;
-
   showImage(images[nextImg]);
 }
 function prevImage() {
   let prevImage = startImage - 1;
-
   showImage(images[prevImage]);
 }
 
