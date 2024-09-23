@@ -3,7 +3,7 @@ const categories = [
   { name: "Newborn", filter: "newborn" },
   { name: "Baptism", filter: "baptism" },
   { name: "Pregnant", filter: "pregnant" },
-  { name: "Ocassions", filter: "occasions" },
+  { name: "Occasions", filter: "occasions" },
 ];
 const images = [
   {

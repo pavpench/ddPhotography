@@ -1,13 +1,12 @@
 #filter-container {
   background: var(--color-secondary);
-
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.filter-element {
+span.filter-element {
   background-color: var(--color-secondary);
   padding: 12px 24px;
   border-radius: 20px;
@@ -15,12 +14,12 @@
   cursor: pointer;
 }
 
-.filter-element:hover {
+span.filter-element:hover {
   background-color: antiquewhite;
   color: var(--color-text-primary);
 }
 
-.filter-active {
+span.filter-active {
   background-color: var(--color-text-primary);
   color: antiquewhite;
 }
