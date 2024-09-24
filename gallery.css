@@ -46,3 +46,29 @@ span.filter-active {
     column-count: 2;
   }
 }
+@media (max-width: 826px) {
+  .nav-container {
+    width: 80%;
+  }
+  nav ul {
+    width: 100%;
+    padding: 0;
+  }
+  .nav_btn {
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+  }
+  .gallery_sub_nav_container {
+    height: 3.5rem;
+  }
+  span.filter-element {
+    padding: 4px 6px;
+    margin: 6px;
+  }
+}
+
+@media (max-width: 375px) {
+  main {
+    margin-top: 2rem;
+  }
+}
