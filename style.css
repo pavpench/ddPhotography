@@ -23,35 +23,36 @@ html {
 }
 
 body {
-  font-family: "Times New Roman", Times, serif, sans-serif;
+  font-family: "Cormorant", "Times New Roman", Times, serif, sans-serif;
+  font-style: italic;
   background: linear-gradient(
-    var(--color-primary) 15%,
-    var(--color-secondary) 29%
+    var(--color-primary) 10%,
+    var(--color-secondary) 20%
   );
   color: var(--color-text-primary);
   width: 100vw;
   height: 100vh;
   /* font-size: 1.6rem; */
   display: grid;
-  grid-template-rows: 25% 65% 5%;
+  grid-template-rows: 20% 75% 5%;
   grid-template-areas: "header" "main" "footer";
-  gap: 2rem;
+  /* gap: 2rem; */
 }
 
 header {
   grid-area: header;
-  margin: 0.7rem;
+  /* margin: 0.7rem; */
 }
 
 .logo {
   margin: 0 auto;
   text-align: center;
-  width: 390px;
-  height: 160px;
+  width: 320px;
+  height: 130px;
 }
 
 .nav-container {
-  padding: 0.7rem;
+  /* padding: 0.7rem; */
   width: 75%;
   margin: 0 auto;
 }
@@ -77,8 +78,10 @@ nav ul {
 
 .nav_btn {
   text-transform: uppercase;
+  /* font-style: inherit; */
+  font-weight: 700;
   font-size: 2.4rem;
-  letter-spacing: 0.4rem;
+  letter-spacing: 0.3rem;
 }
 
 .btn:after {
@@ -125,7 +128,7 @@ main {
   margin: 0 auto;
   grid-area: main;
   overflow: scroll;
-  width: 95%;
+  width: 85%;
   height: 100%;
 
   /* Scrollbar removal for IE */
@@ -145,13 +148,15 @@ section {
   position: relative;
   /* display: flex; */
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+  /* height: 100%; */
 }
 
 .landing {
   width: 100%;
   height: 100%;
+  /* padding: 1rem; */
 }
 
 /* Category groups on landing page */
@@ -159,19 +164,21 @@ section {
   margin: 0.7rem 0rem;
   position: relative;
   display: flex;
-  width: 50rem;
-  height: 23rem;
+  width: 60rem;
+  height: 30rem;
   justify-content: center;
   align-items: center;
 }
 
 /* Title of categories on landing page */
 .group-name-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  text-align: center;
+  bottom: 4rem;
   position: absolute;
-  width: auto;
+  width: 100%;
   height: 3.5rem;
   background-color: var(--color-secondary-text-box-BG);
   color: var(--color-text-primary);
@@ -183,8 +190,8 @@ section {
 }
 
 .group:hover .group-name-title {
-  transition: font-size 0.4s;
-  font-size: 3.5rem;
+  transition: font-size 0.5s;
+  font-size: 3.2rem;
 }
 
 .logo-image,
@@ -195,12 +202,14 @@ section {
 
 /* Setting layout for gallery navigation by category */
 .gallery_sub_nav_container {
-  width: 90%;
-  height: 65px;
+  width: 100%;
+  height: 6.5rem;
   margin: 0 auto;
   justify-content: center;
   position: sticky;
-  top: 0px;
+  top: -1px;
+  font-size: 1.4rem;
+  z-index: 1;
 }
 
 /* Setting gallery layout */
@@ -356,4 +365,14 @@ footer {
   text-align: center;
   width: 100%;
   font-size: 1.2rem;
+}
+
+@media (max-width: 826px) {
+  nav ul {
+    padding: 0;
+  }
+  .nav_btn {
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+  }
 }
