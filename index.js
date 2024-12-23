@@ -131,3 +131,17 @@ function prevImage() {
 
 nextPicture.addEventListener("click", nextImage);
 prevPicture.addEventListener("click", prevImage);
+
+/**
+ * Rendering images
+ */
+images.forEach((element) => {
+  const domElement = document.createElement("img");
+  domElement.src = `${element.src}`;
+  domElement.alt = "";
+  domElement.id = `${element.id}`;
+  domElement.dataset.category = element.category;
+  domElement.classList.add("gallery-image");
+
+  galleryContainer.appendChild(domElement);
+});

@@ -3,26 +3,32 @@ window.addEventListener("DOMContentLoaded", () => {
   const galleryContainer = document.querySelector("#gallery-container");
   const landingCategories = document.querySelectorAll(".group");
 
-  const filterImages = (event) => {
-    const clicked = event.target.closest(".filter-element");
-    document.querySelectorAll(".filter-element").forEach((element) => {
-      element.classList.remove("filter-active");
-    });
-    document
-      .querySelector(`#${clicked.dataset.category}`)
-      .classList.add("filter-active");
+  /**
+   * Filter images based on the category
+   * @param {*} event
+   */
+  // const filterImages = (event) => {
+  //   const clicked = event.target.closest(".filter-element");
+  //   document.querySelectorAll(".filter-element").forEach((element) => {
+  //     element.classList.remove("filter-active");
+  //   });
+  //   document
+  //     .querySelector(`#${clicked.dataset.category}`)
+  //     .classList.add("filter-active");
 
-    document.querySelectorAll(".gallery-image").forEach((element) => {
-      if (
-        (clicked.dataset.category !== element.dataset.category) &
-        (clicked.dataset.category !== "all")
-      ) {
-        element.classList.add("hide-image");
-      } else {
-        element.classList.remove("hide-image");
-      }
-    });
-  };
+  //   document.querySelectorAll(".gallery-image").forEach((element) => {
+  //     if (
+  //       (clicked.dataset.category !== element.dataset.category) &
+  //       (clicked.dataset.category !== "all")
+  //     ) {
+  //       element.classList.add("hide-image");
+  //     } else {
+  //       element.classList.remove("hide-image");
+  //     }
+  //   });
+  // };
+
+  /** Rendering pictures filter component */
 
   // landingCategories.forEach((element) => {
   //   element.addEventListener("click", filterImages);
@@ -44,6 +50,9 @@ window.addEventListener("DOMContentLoaded", () => {
   //   filterContainer.appendChild(domElement);
   // });
 
+  /**
+   * Rendering images
+   */
   images.forEach((element) => {
     const domElement = document.createElement("img");
     domElement.src = `${element.src}`;
