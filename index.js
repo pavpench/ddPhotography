@@ -5,6 +5,7 @@ const nav_btns = document.querySelectorAll(".nav_btn");
 const nav_content = document.querySelectorAll(".nav_content");
 const overlay = document.querySelector(".overlay");
 const info = document.querySelector(".nav_info_btn");
+const main = document.querySelector("main");
 
 /**
  * Toggles Nav Btn to appear as activated or not
@@ -56,6 +57,7 @@ navContainer.addEventListener("click", function (e) {
 
   // making only modal appear over last chosen tab active as background
   if (clicked === info) {
+    main.classList.add("no-scroll");
     toggleBtnView();
     activateContentView(clicked);
     toggleBtnView(true, clicked);

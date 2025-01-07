@@ -327,6 +327,10 @@ section {
   letter-spacing: 0.1rem;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .nav_content {
   display: none;
 }
