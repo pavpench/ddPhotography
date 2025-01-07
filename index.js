@@ -133,8 +133,10 @@ nextPicture.addEventListener("click", nextImage);
 prevPicture.addEventListener("click", prevImage);
 
 /**
- * Rendering images
+ * Rendering gallery images
  */
+const galleryContainer = document.querySelector("#gallery-container");
+
 images.forEach((element) => {
   const domElement = document.createElement("img");
   domElement.src = `${element.src}`;

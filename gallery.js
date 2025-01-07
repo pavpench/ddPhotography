@@ -53,14 +53,14 @@ window.addEventListener("DOMContentLoaded", () => {
   /**
    * Rendering images
    */
-  images.forEach((element) => {
-    const domElement = document.createElement("img");
-    domElement.src = `${element.src}`;
-    domElement.alt = "";
-    domElement.id = `${element.id}`;
-    domElement.dataset.category = element.category;
-    domElement.classList.add("gallery-image");
+  // images.forEach((element) => {
+  //   const domElement = document.createElement("img");
+  //   domElement.src = `${element.src}`;
+  //   domElement.alt = "";
+  //   domElement.id = `${element.id}`;
+  //   domElement.dataset.category = element.category;
+  //   domElement.classList.add("gallery-image");
 
-    galleryContainer.appendChild(domElement);
-  });
+  //   galleryContainer.appendChild(domElement);
+  // });
 });
