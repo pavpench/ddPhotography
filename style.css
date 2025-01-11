@@ -471,6 +471,9 @@ span.filter-active {
   }
 }
 @media (max-width: 826px) {
+  main {
+    /* margin-top: 2rem; */
+  }
   .nav-container {
     width: 80%;
   }
@@ -492,7 +495,27 @@ span.filter-active {
 }
 
 @media (max-width: 375px) {
-  main {
-    margin-top: 2rem;
+  body {
+    grid-template-rows: 20% 70% 10%;
+  }
+
+  .logo {
+    margin: 0.7rem auto;
+    width: 250px;
+    height: 85px;
+  }
+
+  .overlay {
+    width: 90%;
+    top: 20%;
+    left: 5%;
+  }
+  .modal {
+    margin: 5rem auto;
+    padding: 0.7rem;
+    width: 90%;
+  }
+  .for-me-info {
+    font-size: 1.4rem;
   }
 }
