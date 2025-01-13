@@ -49,6 +49,7 @@ navContainer.addEventListener("click", function (e) {
 
   // general use case for navigation bar
   if (clicked !== info) {
+    main.classList.remove("no-scroll");
     toggleBtnView();
     deactivateContentView();
     activateContentView(clicked);
