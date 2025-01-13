@@ -124,7 +124,7 @@ a:hover {
 /* General layout of main container */
 main {
   position: relative;
-  margin: 0 auto;
+  margin: 1rem auto;
   grid-area: main;
   overflow: scroll;
   width: 85%;
@@ -473,10 +473,6 @@ span.filter-active {
 @media (max-width: 826px) {
   body {
     grid-template-rows: 20% 70% 10%;
-  }
-
-  main {
-    /* margin-top: 2rem; */
   }
 
   .logo {
