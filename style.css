@@ -471,9 +471,20 @@ span.filter-active {
   }
 }
 @media (max-width: 826px) {
+  body {
+    grid-template-rows: 20% 70% 10%;
+  }
+
   main {
     /* margin-top: 2rem; */
   }
+
+  .logo {
+    margin: 0.7rem auto;
+    width: 250px;
+    height: 85px;
+  }
+
   .nav-container {
     width: 80%;
   }
@@ -492,30 +503,23 @@ span.filter-active {
     padding: 4px 6px;
     margin: 6px;
   }
-}
-
-@media (max-width: 375px) {
-  body {
-    grid-template-rows: 20% 70% 10%;
-  }
-
-  .logo {
-    margin: 0.7rem auto;
-    width: 250px;
-    height: 85px;
-  }
 
   .overlay {
     width: 90%;
     top: 20%;
     left: 5%;
   }
+
   .modal {
     margin: 5rem auto;
     padding: 0.7rem;
     width: 90%;
   }
+
   .for-me-info {
     font-size: 1.4rem;
   }
+}
+
+@media (max-width: 375px) {
 }
