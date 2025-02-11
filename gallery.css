@@ -1,13 +1,17 @@
 #filter-container {
+  width: 100%;
   background: var(--color-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  z-index: 1;
+  /* z-index: 1; */
+  position: sticky;
+  top: 0rem;
 }
 
 span.filter-element {
+  font-size: 1.6rem;
   background-color: var(--color-secondary);
   padding: 12px 24px;
   border-radius: 20px;
@@ -26,7 +30,7 @@ span.filter-active {
 }
 
 /* masonry effect */
-#gallery-container {
+/* #gallery-container {
   width: 90%;
   margin: 0 auto;
   column-count: 3;
@@ -39,9 +43,9 @@ span.filter-active {
 
 .gallery-image.hide-image {
   display: none;
-}
+} */
 
-@media (max-width: 920px) {
+/* @media (max-width: 920px) {
   #gallery-container {
     column-count: 2;
   }
@@ -71,4 +75,4 @@ span.filter-active {
   main {
     margin-top: 2rem;
   }
-}
+} */
